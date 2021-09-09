@@ -1,24 +1,39 @@
-# README
+# 動物画像SNS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+ユーザーが動物の事に関して投稿できるサイトで、ユーザー側と管理者側の２つの機能を実装しています。
+投稿内容は好きな動物の画像と好きな所、その動物に対して知って欲しい所など、説明文などを記入して投稿が出来、投稿ユーザーが投稿内容を編集する事が出来ます。
+他のユーザーの投稿に対してユーザー同士がコメントを残したり、いいね、ブックマークが出来ます。
+ユーザーの詳細を見れる事もでき、投稿した一覧ページから投稿画面へ遷移する事も出来ます。
+ユーザーの情報や投稿内容は不適切画像や、不適切な内容を投稿される可能性がある為、管理者も投稿を編集出来る様にします。
 
-Things you may want to cover:
 
-* Ruby version
+### サイトテーマ
+ユーザーが動物の好きな所や、知って欲しい所を共有出来るサイト
 
-* System dependencies
+### テーマを選んだ理由
+コロナで自粛生活を強いられる中、家にいる時間が多くなった為、ペットを飼い始めたという人が多くなった印象があります。
+Twitterなどでペットの画像を投稿している人達をよく見かけるのですが、動物に特化したSNSサイトはまだ無いなと思い、自身も動物好きなのでテーマとして選んでみました。
 
-* Configuration
+### ターゲットユーザ
+ネットを使える幅広い動物好きユーザー
 
-* Database creation
+### 主な利用シーン
+動物好きな人と交流を深めることが出来る。
+各ユーザーが色々な情報を共有する事であらゆる動物に対して理解を深める事が出来る。
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1Ycqh1PAT5kOhd-NRysv6LP0WNaOUsNLXHsTzbh4dCVo/edit#gid=0>
 
-* Deployment instructions
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* ...
+## 使用素材
+未定
