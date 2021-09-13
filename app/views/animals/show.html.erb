@@ -1,0 +1,37 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+<% if flash[:notice2] %>
+  <p><%= flash[:notice2] %></p>
+<% end %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>User info</h2>
+      <%= render 'users/info', user: @animal.user %>
+      <h2>New animal</h2>
+      <%= render 'form', animal: Animal.new %>
+    </div>
+      <div class="col-md-8 offset-md-1">
+       <h2>Animal detail</h2>
+        <table class="table">
+              <tr>
+                <td><%= link_to user_path(@animal.user) do %>
+                  <%= attachment_image_tag(@animal.user, :image, size:"40x40", format: 'jpeg', fallback: "no_image.jpg") %><br>
+                  <%= @animal.user.name %>
+                  <% end %>
+                </td>
+
+                <td><%= @animal.image_id %></td>
+
+                <td><%= link_to @animal.title, animal_path(@animal) %></td>
+                <td><%= @animal.body %></td>
+                <% if @user.id == current_user.id %>
+                  <td><%= link_to 'Edit', edit_animal_path(@animal), class: "btn btn-sm btn-success edit_animal_#{@animal.id}" %></td>
+                  <td><%= link_to 'Destroy', animal_path(@animal), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_animal_#{@animal.id}"%></td>
+                <% end %>
+              </tr>
+        </table>
+      </div>
+    </div>
+</div>
