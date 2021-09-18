@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :animals, dependent: :destroy
-  has_many :post_comments, dependent: :destroy
+  has_many :animal_comments, dependent: :destroy
   attachment :image
 
   validates :name, presence: true,

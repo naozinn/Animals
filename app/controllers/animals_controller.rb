@@ -1,13 +1,17 @@
 class AnimalsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+
   def show
     @animal = Animal.find(params[:id])
     @user = @animal.user
     @animal_new = Animal.new
+    @animal_comment = AnimalComment.new
   end
 
   def edit
     @animal = Animal.find(params[:id])
-    flash[:notice2] = "You have updated book successfully."
+    flash[:notice2] = "You have updated animal successfully."
     if @animal.user == current_user
       render "edit"
     else
@@ -28,7 +32,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.new(animal_params)
     @animal.user_id = current_user.id
     if @animal.save
-      flash[:notice] = "You have created book successfully."
+      flash[:notice] = "You have created animal successfully."
       redirect_to animal_path(@animal)
     else
       @Animals = Animal.all
@@ -56,5 +60,12 @@ class AnimalsController < ApplicationController
 
   def animal_params
     params.require(:animal).permit(:title, :body)
+  end
+
+  def ensure_correct_user
+    @animal = Animal.find(params[:id])
+    unless @animal.user == current_user
+      redirect_to animals_path
+    end
   end
 end

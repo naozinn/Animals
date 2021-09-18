@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   get "/about" => "homes#about", as: "about"
   
-  resources :animals, only: [:index, :show, :create, :edit, :destroy, :update]
+  resources :animals, only: [:index, :show, :create, :edit, :destroy, :update] do
+    resources :animal_comments, only: [:create, :destroy]
+  end
   resources :users, only: [:index, :show, :create, :edit, :update]
 
   devise_for :admin, controllers: {

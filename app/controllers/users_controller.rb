@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
-    redirect_to books_path
+    redirect_to animals_path
   end
 
   def index
