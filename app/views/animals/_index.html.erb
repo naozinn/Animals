@@ -18,7 +18,7 @@
         <td><%= attachment_image_tag(animal, :image_id, size:"40x40", format: 'jpeg', fallback: "no_image.jpg") %></td>
         <td><%= link_to animal.title, animal_path(animal), class: "animal_#{animal.id}" %></td>
         <td><%= animal.body %></td>
-        <!--<td>コメント数: <%#= animal.animal_comments.count %></td>-->
+        <td>コメント数: <%= animal.animal_comments.count %></td>
       </tr>
     <% end %>
   </tbody>
