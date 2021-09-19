@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   get "/about" => "homes#about", as: "about"
-  
+
   resources :animals, only: [:index, :show, :create, :edit, :destroy, :update] do
+    resource :favorites, only: [:create, :destroy]
     resources :animal_comments, only: [:create, :destroy]
   end
   resources :users, only: [:index, :show, :create, :edit, :update]

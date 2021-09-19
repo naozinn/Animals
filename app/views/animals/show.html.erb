@@ -26,6 +26,7 @@
 
                 <td><%= link_to @animal.title, animal_path(@animal) %></td>
                 <td><%= @animal.body %></td>
+                <td class="favorite-btn"><%= render "favorites/favorite-btn", animal: @animal %></td>
                 <td>コメント数: <%= @animal.animal_comments.count %></td>
                 <% if @user.id == current_user.id %>
                   <td><%= link_to 'Edit', edit_animal_path(@animal), class: "btn btn-sm btn-success edit_animal_#{@animal.id}" %></td>

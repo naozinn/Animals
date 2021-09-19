@@ -6,6 +6,7 @@ class User < ApplicationRecord
          
   has_many :animals, dependent: :destroy
   has_many :animal_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   attachment :image
 
   validates :name, presence: true,
