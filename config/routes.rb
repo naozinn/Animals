@@ -17,8 +17,6 @@ Rails.application.routes.draw do
 
   get '/search' => 'searches#search'
 
-
-
   devise_for :admin, controllers: {
     sessions: 'admin/sessions',
     passwords: 'admin/passwords',

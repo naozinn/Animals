@@ -1,5 +1,5 @@
 <table>
-  <% @animal.animal_comments.each do |animal_comment| %>
+  <% animal.animal_comments.each do |animal_comment| %>
     <% animal_comment_user = animal_comment.user %>
     <tr>
     	<td>
@@ -10,12 +10,8 @@
     	</td>
     	<td><%= animal_comment.comment %></td>
     	<% if current_user == animal_comment_user %>
-      	<td><%= link_to 'Destroy', animal_animal_comment_path(animal_comment.animal_id, animal_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
+      	<td><%= link_to 'Destroy', animal_animal_comment_path(animal_comment.animal_id, animal_comment.id), class: 'btn-sm btn-danger', method: :delete,remote: true %></td>
     	<% end %>
     </tr>
   <% end %>
 </table>
-<%= form_with model:[@animal,@animal_comment], local: true do |f| %>
-  <%= f.text_area :comment, size:"90x5" %><br>
-  <%= f.submit '送信'%>
-<% end %>

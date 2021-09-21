@@ -1,0 +1,4 @@
+$("#animal_<%= @animal.id %> .comments-count").html("コメント数: <%= @animal.animal_comments.count %>");
+$(".animal_comments").html("<%= j(render 'animal_comments/index', animal: @animal) %>");
+$("#animal_comment_comment").val("");
+$("main > .container").prepend("<%= j(render 'layouts/errors', obj: @animal_comment) %>");
