@@ -59,7 +59,7 @@ class AnimalsController < ApplicationController
   private
 
   def animal_params
-    params.require(:animal).permit(:title, :body)
+    params.require(:animal).permit(:title, :body, :animal_image)
   end
 
   def ensure_correct_user

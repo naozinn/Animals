@@ -15,7 +15,7 @@
           <%= attachment_image_tag(animal.user, :image, size:"40x40", format: 'jpeg', fallback: "no_image.jpg") %>
           <% end %>
         </td>
-        <td><%= attachment_image_tag(animal, :image_id, size:"40x40", format: 'jpeg', fallback: "no_image.jpg") %></td>
+        <td><%= attachment_image_tag(animal, :animal_image, size:"40x40", format: 'jpeg', fallback: "no_image.jpg") %></td>
         <td><%= link_to animal.title, animal_path(animal), class: "animal_#{animal.id}" %></td>
         <td><%= animal.body %></td>
         <td class="favorite-btn"><%= render "favorites/favorite-btn", animal: animal %></td>

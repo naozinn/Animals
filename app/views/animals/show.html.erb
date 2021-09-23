@@ -21,9 +21,7 @@
                   <%= @animal.user.name %>
                   <% end %>
                 </td>
-
-                <td><%= @animal.image_id %></td>
-
+                <td><%= attachment_image_tag(@animal, :animal_image, size:"40x40", fallback: "no_image.jpg") %></td>
                 <td><%= link_to @animal.title, animal_path(@animal) %></td>
                 <td><%= @animal.body %></td>
                 <td class="favorite-btn"><%= render "favorites/favorite-btn", animal: @animal %></td>

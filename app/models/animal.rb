@@ -1,6 +1,6 @@
 class Animal < ApplicationRecord
   belongs_to :user
-  attachment :image
+  attachment :animal_image
   has_many :animal_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 

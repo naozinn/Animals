@@ -1,9 +1,9 @@
 <%= form_with model:animal,local:true do |f| %>
 
-  <!--<div class="form-group">-->
-    <%#= f.label :image_id %>
-    <%#= f.attachment_field :image_id, class: 'form-control animal_image_id' %>
-  <!--</div>-->
+
+  <td><%= f.label :画像 %>
+  <%= f.file_field :animal_image, class: "image" %>
+  </td>
 
   <div class="form-group">
     <%= f.label :title %>

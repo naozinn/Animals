@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_09_20_044338) do
   create_table "animals", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.string "image_id"
+    t.string "animal_image_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
