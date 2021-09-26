@@ -1,0 +1,31 @@
+<div class="ml-5">
+<h2>
+  <td>会員一覧</td>
+</h2>
+  <table class='table table-hover'>
+    <thead>
+      <tr>
+        <th>会員ID</th>
+        <th>氏名</th>
+        <th>メールアドレス</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td>
+          <%= link_to admin_user_path(user.id) do %>
+            <%= user.name %>
+          <% end %>
+        </td>
+        <td><%= user.email %></td>
+      </tr>
+      <tr>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div><%= paginate @users %></div>
+</div>

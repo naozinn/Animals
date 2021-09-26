@@ -22,32 +22,23 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
-            <li class="nav-item">
-               <%= link_to 'Home' , user_path(current_user.id), class: 'fas fa-home nav-link text-white', method: :get %>
-            </li>
-               <li class="nav-item">
-               <%= link_to 'Users' , users_path, class: 'fas fa-users nav-link text-white', method: :get %>
-            </li>
-               <li class="nav-item">
-               <%= link_to 'Animals' , animals_path, class: 'fas fa-book-open nav-link text-white', method: :get %>
-            </li>
-               <li class="nav-item">
-               <%= link_to 'logout' , destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-white' %>
-            </li>
+            <li class="nav-item"><%= link_to 'Home' , user_path(current_user.id), class: 'fas fa-home nav-link text-white', method: :get %></li>
+              <li class="nav-item"><%= link_to 'Users' , users_path, class: 'fas fa-users nav-link text-white', method: :get %></li>
+              <li class="nav-item"><%= link_to 'Animals' , animals_path, class: 'fas fa-book-open nav-link text-white', method: :get %></li>
+              <li class="nav-item"><%= link_to 'logout' , destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-white' %></li>
+
+            <% elsif admin_signed_in? %>
+              <li class="nav-item"><%= link_to '会員一覧', admin_users_path,class: "btn btn-outline-dark text-white" %></li>
+              <li class="nav-item"><%= link_to '投稿一覧', admin_root_path,class: "btn btn-outline-dark text-white" %></li>
+              <li class="nav-item"><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn btn-outline-dark text-white" %></li>
+
             <% else %>
-              <li class="nav-item">
-               <%= link_to 'Home' , root_path, class: 'fas fa-home nav-link text-white', method: :get %>
-              </li>
-              <li class="nav-item">
-               <%= link_to 'About' , about_path, class: 'fas fa-link nav-link text-white', method: :get %>
-              </li>
-              <li class="nav-item">
-               <%= link_to 'Sign up' , new_user_registration_path, class: 'fas fa-user-plus nav-link text-white', method: :get %>
-              </li>
-              <li class="nav-item">
-               <%= link_to 'login' , new_user_session_path, class: 'fas fa-sign-in-alt nav-link text-white', method: :get %>
-              </li>
+              <li class="nav-item"><%= link_to 'Home' , root_path, class: 'fas fa-home nav-link text-white', method: :get %></li>
+              <li class="nav-item"><%= link_to 'About' , about_path, class: 'fas fa-link nav-link text-white', method: :get %></li>
+              <li class="nav-item"><%= link_to 'Sign up' , new_user_registration_path, class: 'fas fa-user-plus nav-link text-white', method: :get %></li>
+              <li class="nav-item"><%= link_to 'login' , new_user_session_path, class: 'fas fa-sign-in-alt nav-link text-white', method: :get %></li>
             <% end %>
+
             </ul>
           </div>
         </div>
