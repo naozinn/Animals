@@ -1,16 +1,17 @@
 <%= form_with model:animal,local:true do |f| %>
 
 
-  <td><%= f.label :画像 %>
-  <%= f.file_field :animal_image, class: "image" %>
-  </td>
+  <div class="form-group">
+    <%= f.label :画像 %>
+    <%= f.file_field :animal_image, class: "image" %>
+  </div>
 
   <div class="form-group">
-    <%= f.label :title %>
+    <%= f.label :タイトル %>
     <%= f.text_field :title, class: 'form-control animal_title' %>
   </div>
   <div class="form-group">
-    <%= f.label :opinion %>
+    <%= f.label :内容 %>
     <%= f.text_area :body, class: 'form-control animal_body' %>
   </div>
   <div class="form-group">

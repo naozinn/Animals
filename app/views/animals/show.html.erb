@@ -7,13 +7,13 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-      <h2>User info</h2>
+      <h2>プロフィール</h2>
       <%= render 'users/info', user: @animal.user %>
       <h2>New animal</h2>
       <%= render 'form', animal: Animal.new %>
     </div>
       <div class="col-md-8 offset-md-1">
-       <h2>Animal detail</h2>
+       <h2>Animal 詳細</h2>
         <table class="table">
               <tr id="animal_<%= @animal.id %>">
                 <td><%= link_to user_path(@animal.user) do %>
@@ -27,8 +27,8 @@
                 <td class="favorite-btn"><%= render "favorites/favorite-btn", animal: @animal %></td>
                 <td class="comments-count">コメント数: <%= @animal.animal_comments.count %></td>
                 <% if @user.id == current_user.id %>
-                  <td><%= link_to 'Edit', edit_animal_path(@animal), class: "btn btn-sm btn-success edit_animal_#{@animal.id}" %></td>
-                  <td><%= link_to 'Destroy', animal_path(@animal), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_animal_#{@animal.id}"%></td>
+                  <td><%= link_to '編集', edit_animal_path(@animal), class: "btn btn-sm btn-success edit_animal_#{@animal.id}" %></td>
+                  <td><%= link_to '削除', animal_path(@animal), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_animal_#{@animal.id}"%></td>
                 <% end %>
               </tr>
         </table>

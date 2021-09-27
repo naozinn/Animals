@@ -5,11 +5,11 @@
           <table class="table">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>名前</th>
                 <th>User</th>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Opinion</th>
+                <th>画像</th>
+                <th>タイトル</th>
+                <th>内容</th>
                 <th></th>
               </tr>
             </thead>
@@ -24,7 +24,7 @@
                   <td><%= attachment_image_tag(animal, :animal_image, size:"40x40", format: 'jpeg', fallback: "no_image.jpg") %></td>
                   <td><%= animal.title %></td>
                   <td><%= animal.body %></td>
-                  <td><%= link_to 'Destroy', admin_animal_path(animal), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_animal_#{animal.id}"%></td>
+                  <td><%= link_to '削除', admin_animal_path(animal), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_animal_#{animal.id}"%></td>
                 </tr>
               <% end %>
             </tbody>

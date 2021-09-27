@@ -11,12 +11,12 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-       <h2>Editing Animal</h2>
+       <h2>編集ページ</h2>
 
         <%= render 'form', animal: @animal %>
-        <%= link_to "Show",animal_path(@animal.id) %>
+        <%= link_to "詳細へ",animal_path(@animal.id) %>
         |
-        <%= link_to "Back",animals_path %>
+        <%= link_to "戻る",animals_path %>
       </div>
     </div>
   </div>
